@@ -1,0 +1,27 @@
+{
+    "compilerOptions": {
+      "outDir": "./dist/",
+      "sourceMap": true,
+      "strict": true,
+      "module": "esnext",
+      "jsx": "react",
+      "moduleResolution": "node",
+      "esModuleInterop": true,
+      "allowSyntheticDefaultImports": true,
+      "target": "es5",
+      "typeRoots": [
+        "node_modules/@types"
+      ],
+      "lib": [
+        "esnext",
+        "dom",
+        "dom.iterable",
+        "scripthost"
+      ]
+    },
+    "include": [
+      "src",
+      "src/custom.d.ts"
+    ]
+  }
+  
