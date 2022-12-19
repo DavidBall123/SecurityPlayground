@@ -4,9 +4,9 @@ import IWeatherData from '../types/Weather'
 
 
 const WeatherList: React.FC = () => {
-    const [weatherList, setWeatherList] = useState<Array<IWeatherData>>([]);
-    const [currentWeather, setCurrentWeather] = useState<IWeatherData | null>(null);
-    const [currentIndex, setCurrentIndex] = useState<number>(-1);
+    // const [weatherList, setWeatherList] = useState<Array<IWeatherData>>([]);
+    // const [currentWeather, setCurrentWeather] = useState<IWeatherData | null>(null);
+    // const [currentIndex, setCurrentIndex] = useState<number>(-1);
 
     // useEffect(() => {
     //     retrieveWeatherList();
