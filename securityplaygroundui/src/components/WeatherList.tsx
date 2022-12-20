@@ -1,46 +1,45 @@
-import React, { useState, useEffect, ChangeEvent } from "react";
+ import React, { useState, useEffect, ChangeEvent } from "react";
 import WeatherService from "../services/WeatherService";
 import IWeatherData from '../types/Weather'
 
 
 const WeatherList: React.FC = () => {
-    // const [weatherList, setWeatherList] = useState<Array<IWeatherData>>([]);
-    // const [currentWeather, setCurrentWeather] = useState<IWeatherData | null>(null);
-    // const [currentIndex, setCurrentIndex] = useState<number>(-1);
+    const [weatherList, setWeatherList] = useState<Array<IWeatherData>>([]);
+    const [currentWeather, setCurrentWeather] = useState<IWeatherData | null>(null);
+    const [currentIndex, setCurrentIndex] = useState<number>(-1);
 
-    // useEffect(() => {
-    //     retrieveWeatherList();
-    // }, []);
+    useEffect(() => {
+        retrieveWeatherList();
+    }, []);
 
-    // const retrieveWeatherList = () => {
-    //     console.log("here");
-    //     WeatherService.getAll()
-    //       .then((response: any) => {
-    //         setWeatherList(response.data);
-    //         console.log(response.data);
-    //       })
-    //       .catch((e: Error) => {
-    //         console.log(e);
-    //       });
-    //   };
+    const retrieveWeatherList = () => {
+        WeatherService.getAll()
+          .then((response: any) => {
+            setWeatherList(response.data);
+            console.log(response.data);
+          })
+          .catch((e: Error) => {
+            console.log(e);
+          });
+      };
     
-    // const refreshList = () => {
-    //     retrieveWeatherList();
-    //     setCurrentWeather(null);
-    //     setCurrentIndex(-1);
-    // };
+    const refreshList = () => {
+        retrieveWeatherList();
+        setCurrentWeather(null);
+        setCurrentIndex(-1);
+    };
 
-    // const setActiveWeather = (weather: IWeatherData, index: number) => {
-    //     setCurrentWeather(weather);
-    //     setCurrentIndex(index);
-    //   };
+    const setActiveWeather = (weather: IWeatherData, index: number) => {
+        setCurrentWeather(weather);
+        setCurrentIndex(index);
+      };
 
       return (
         <div className="list row">
           <div className="col-md-6">
             <h4>Weather List</h4>
     
-            {/* <ul className="list-group">
+            <ul className="list-group">
               {weatherList &&
                 weatherList.map((weather, index) => (
                   <li
@@ -53,10 +52,10 @@ const WeatherList: React.FC = () => {
                     {weather.summary}
                   </li>
                 ))}
-            </ul> */}
+            </ul>
     
           </div>
-          {/* <div className="col-md-6">
+          <div className="col-md-6">
             {currentWeather ? (
               <div>
                 <h4>Weather</h4>
@@ -86,7 +85,7 @@ const WeatherList: React.FC = () => {
                 <p>Please click on a Tutorial...</p>
               </div>
             )}
-          </div> */}
+          </div>
         </div>
       );
     
