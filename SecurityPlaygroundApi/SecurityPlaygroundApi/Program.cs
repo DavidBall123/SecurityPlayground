@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using SecurityPlaygroundApi.DAL;
+using SecurityPlayground.Infrastructure.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
 

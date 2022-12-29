@@ -5,6 +5,8 @@ using SecurityPlayground.Application.Common.Interfaces;
 using SecurityPlayground.Infrastructure.Identity;
 using SecurityPlayground.Infrastructure.Persistence.Interceptors;
 using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
+using Duende.IdentityServer.EntityFramework.Options;
+using Microsoft.Extensions.Options;
 
 namespace SecurityPlayground.Infrastructure.Persistence;
 
@@ -16,7 +18,12 @@ public class CertificateContext : ApiAuthorizationDbContext<ApplicationUser>, IC
     public DbSet<Certificate> Certificates => Set<Certificate>();
     public DbSet<Subject> Subjects => Set<Subject>();
 
-    public CertificateContext(DbContextOptions<CertificateContext> options, IMediator mediator, AuditableEntitySaveChangesInterceptor auditableEntitySaveChangesInterceptor) : base(options)
+    public CertificateContext(
+        DbContextOptions<CertificateContext> options,
+        IOptions<OperationalStoreOptions> operationalStoreOptions,
+        IMediator mediator, 
+        AuditableEntitySaveChangesInterceptor auditableEntitySaveChangesInterceptor) 
+        : base(options, operationalStoreOptions)
     {
         _mediator = mediator;
         _auditableEntitySaveChangesInterceptor = auditableEntitySaveChangesInterceptor;
@@ -24,8 +31,6 @@ public class CertificateContext : ApiAuthorizationDbContext<ApplicationUser>, IC
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-
-
         
     }
 

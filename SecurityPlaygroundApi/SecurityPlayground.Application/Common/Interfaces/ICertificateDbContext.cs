@@ -1,9 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SecurityPlaygroundApi.;
+using SecurityPlayground.Domain.Entities;
+
 
 namespace SecurityPlayground.Application.Common.Interfaces;
 
-internal interface ICertificateDbContext
+public interface ICertificateDbContext
 {
     DbSet<Certificate> Certificates { get; }
 
