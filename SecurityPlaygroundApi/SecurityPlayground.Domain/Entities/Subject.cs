@@ -1,6 +1,8 @@
-﻿namespace SecurityPlayground.Domain.Entities
+﻿using SecurityPlayground.Domain.Common;
+
+namespace SecurityPlayground.Domain.Entities
 {
-    public class Subject
+    public class Subject : BaseAuditableEntity
     {
         /// <summary>
         /// Gets or sets the id.

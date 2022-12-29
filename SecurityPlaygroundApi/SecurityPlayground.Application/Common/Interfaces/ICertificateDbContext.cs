@@ -4,7 +4,7 @@ using SecurityPlayground.Domain.Entities;
 
 namespace SecurityPlayground.Application.Common.Interfaces;
 
-public interface ICertificateDbContext
+public interface ICertificateContext
 {
     DbSet<Certificate> Certificates { get; }
 

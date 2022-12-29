@@ -1,7 +1,8 @@
-﻿
+﻿using SecurityPlayground.Domain.Common;
+
 namespace SecurityPlayground.Domain.Entities
 {
-    public class Certificate
+    public class Certificate : BaseAuditableEntity
     {
         /// <summary>
         /// Gets or sets the Id

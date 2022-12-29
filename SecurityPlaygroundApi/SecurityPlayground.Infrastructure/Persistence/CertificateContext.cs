@@ -10,7 +10,7 @@ using Microsoft.Extensions.Options;
 
 namespace SecurityPlayground.Infrastructure.Persistence;
 
-public class CertificateContext : ApiAuthorizationDbContext<ApplicationUser>, ICertificateDbContext
+public class CertificateContext : ApiAuthorizationDbContext<ApplicationUser>, ICertificateContext
 {
     private readonly IMediator _mediator;
     private readonly AuditableEntitySaveChangesInterceptor _auditableEntitySaveChangesInterceptor;
